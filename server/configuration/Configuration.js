@@ -9,6 +9,7 @@ const connectToDatabase = async () => {
     await mongoose.connect(DB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false,
     });
     console.log('Successfully connected to the database!');
   } catch (error) {
@@ -19,8 +20,8 @@ const connectToDatabase = async () => {
 
 const connectToPort = (app) => {
   const port = process.env.PORT;
-  app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+  app.listen(3001, () => {
+    console.log(`Server is running on port: ${3001}`);
   });
 };
 

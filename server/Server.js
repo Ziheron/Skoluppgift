@@ -15,8 +15,6 @@ app.use(helmet());
 app.use(morgan('common'));
 // eslint-disable-next-line no-undef
 
-UserRoutes.routes(app);
-
 app.get('/moose', (req, res) => {
   res.send('Man skall inte välta den älg som sover!');
 });
@@ -25,5 +23,7 @@ UserRoutes.routes(app);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
-configuration.connectToDatabase;
+configuration.connectToDatabase();
 configuration.connectToPort(app);
+
+export default app;
